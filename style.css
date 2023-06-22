@@ -1,0 +1,112 @@
+:root {
+  --main-color: #83c5be;
+  --second-color: #006d77;
+  --third-colr: #edf6f9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+/*Navbar*/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 5%;
+  align-items: center;
+  background-color: white;
+}
+
+.logo {
+  color: var(--main-color);
+  font-size: 32px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  display: inline-block;
+}
+
+ul li a {
+  text-decoration: none;
+  color: var(--second-color);
+  padding: 8px 30px;
+  border-radius: 7px;
+  transition: all 0.3s ease;
+}
+
+ul li a:hover,
+ul li a.active {
+  color: var(--third-colr);
+  background: var(--main-color);
+}
+
+#icon {
+  background-color: white;
+  padding: 5px 7px 3px 7px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#icon svg {
+  color: var(--second-color);
+  height: 28px;
+  transition: all 0.3s ease;
+}
+
+#icon:hover {
+  background: var(--main-color);
+}
+
+#icon:hover svg {
+  color: var(--third-colr);
+}
+
+#checkbox,
+#icon {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    border-bottom: 1px solid var(--second-color);
+  }
+  ul {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh-71px);
+    background: white;
+    left: 0;
+    top: 0;
+    text-align: center;
+    display: none;
+    margin-top: 71px;
+  }
+  ul li {
+    display: block;
+    padding: 10px 15px;
+  }
+  ul li a {
+    display: block;
+    padding: 10px 0;
+  }
+  #icon {
+    display: block;
+  }
+  #checkbox:checked ~ ul {
+    display: block;
+  }
+}
